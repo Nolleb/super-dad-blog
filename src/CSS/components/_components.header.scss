@@ -1,0 +1,34 @@
+.c-header {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+    height: 300px;
+    overflow: hidden;
+    background: #8ebded;
+    margin-bottom: 24px;
+    background: -moz-radial-gradient(center, ellipse cover,  #8ebded 0%, #1e8eff 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#8ebded), color-stop(100%,#1e8eff));
+    background: -webkit-radial-gradient(center, ellipse cover,  #8ebded 0%,#1e8eff 100%);
+    background: -o-radial-gradient(center, ellipse cover,  #8ebded 0%,#1e8eff 100%);
+    background: -ms-radial-gradient(center, ellipse cover,  #8ebded 0%,#1e8eff 100%);
+    background: radial-gradient(ellipse at center,  #8ebded 0%,#1e8eff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8ebded', endColorstr='#1e8eff',GradientType=1 );
+
+    &__effect {
+        width: 100%;
+        height: 200%;
+        -webkit-perspective: 5px;
+    }
+
+    &__content {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__link:hover {
+        text-decoration: none;
+    }
+}
