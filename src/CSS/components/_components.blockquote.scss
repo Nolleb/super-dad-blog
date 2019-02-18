@@ -1,0 +1,14 @@
+.c-blockquote {
+    margin-bottom: $global-spacing-unit;
+    &::before {
+        content: open-quote;
+    }
+
+    &::after {
+        content: close-quote;
+    }
+
+    &::before, &::after {
+        color: $color-quote;
+    }
+}

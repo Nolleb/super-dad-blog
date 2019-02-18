@@ -1,0 +1,10 @@
+.c-avatar {
+    margin-bottom: $global-spacing-unit;
+
+    &__img {
+        display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    }
+}

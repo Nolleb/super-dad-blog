@@ -7,7 +7,7 @@ const HomePage = ({data}) => {
     const {edges} = data.allMarkdownRemark;
     return (
         <Layout>
-                <section className="o-layout__item u-3/5@md">
+                <section className="o-layout__item u-3/4@md">
                     <div className="o-layout">
                     
                     {edges.map(edge=>{
