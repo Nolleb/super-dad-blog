@@ -8,11 +8,13 @@ const HomePage = ({data}) => {
     return (
         <Layout>
                 <section className="o-layout__item u-3/5@md">
+                    <div className="o-layout">
+                    
                     {edges.map(edge=>{
                         const {frontmatter} = edge.node;
                         return(
-                            
-                            <div className="c-panel" key={frontmatter.path}>
+                            <div className="o-layout__item u-1/2@sm" key={frontmatter.path}>        
+                            <div className="c-panel" >
                                 <div className="c-panel__head c-panel__head--fluid">
                                     <img className="c-panel__head-media" src="https://placeimg.com/480/480/any"></img>
                                 </div>
@@ -38,9 +40,12 @@ const HomePage = ({data}) => {
                                 <Link className="c-panel__link" to={frontmatter.path}>
                                     READ MORE ...
                                 </Link>
+                            </div>
                             </div>   
                         )
                     })}
+                
+                    </div>
                 </section>
         </Layout>
     )
