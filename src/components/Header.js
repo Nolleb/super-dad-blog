@@ -8,20 +8,20 @@ const TitleAndDescription = ({data}) => {
 
     return(
         <div className="c-header">
-            <div class="c-header__effect">
-                <div class="c-spinner">
-                    <div class="c-spinner__vane"></div>
-                    <div class="c-spinner__vane"></div>
-                    <div class="c-spinner__vane"></div>
-                    <div class="c-spinner__vane"></div>
-                    <div class="c-spinner__vane"></div>
-                    <div class="c-spinner__vane"></div>
-                    <div class="c-spinner__vane"></div>
-                    <div class="c-spinner__vane"></div>
-                    <div class="c-spinner__vane"></div>
-                    <div class="c-spinner__vane"></div>
+            <div className="c-header__effect">
+                <div className="c-spinner">
+                    <div className="c-spinner__vane"></div>
+                    <div className="c-spinner__vane"></div>
+                    <div className="c-spinner__vane"></div>
+                    <div className="c-spinner__vane"></div>
+                    <div className="c-spinner__vane"></div>
+                    <div className="c-spinner__vane"></div>
+                    <div className="c-spinner__vane"></div>
+                    <div className="c-spinner__vane"></div>
+                    <div className="c-spinner__vane"></div>
+                    <div className="c-spinner__vane"></div>
                 </div>
-                <div class="c-header__content">
+                <div className="c-header__content">
                     <Link className="c-header__link" to="/">
                         <h1 className="heading-primary">{title}</h1>
                     </Link>

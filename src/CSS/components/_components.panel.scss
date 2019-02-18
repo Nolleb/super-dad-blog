@@ -9,13 +9,40 @@
     margin-bottom: $global-spacing-unit;
     border: 1px solid $color-ui;
     box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.025);
+
+    &__head {
+        height: 10 * $global-spacing-unit;
+        overflow: hidden;
+        background-color: $color-ui;
+    }
+
+    &__content {
+        padding: $global-spacing-unit;
+    
+        > :last-child {
+        margin-bottom: 0;
+        }
+    }
+
+    &__tag {
+        background: $color-tag;
+        color: $color-white;
+        border-radius: 4px;
+        padding: 4px;
+        display: inline-block;
+        margin-left: 5px;
+        font-size: 14px;
+        vertical-align: top;
+
+        & > a {
+            @include hocus() {
+                text-decoration: none;
+            }
+            text-transform: capitalize;
+        }
+    }
 }
-  
-.c-panel__head {
-    height: 10 * $global-spacing-unit;
-    overflow: hidden;
-    background-color: $color-ui;
-}
+
   
 .c-panel__head--small {
     height: 5 * $global-spacing-unit;
@@ -39,14 +66,7 @@
 
 }
   
-.c-panel__content {
-    padding: $global-spacing-unit;
-
-    > :last-child {
-    margin-bottom: 0;
-    }
-
-}
+.c-panel
 
 .c-panel__link {
     display: block;

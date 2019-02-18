@@ -18,6 +18,18 @@ const HomePage = ({data}) => {
                                 </div>
                                 <div className="c-panel__content">
                                     <div className="o-headline">
+                                        <h4>{frontmatter.date}
+                                        {frontmatter.tags.map((tagName, index)=>{
+                                            return(
+                                            <span className="c-panel__tag" key={index}>
+                                                <Link to={`tags/${tagName}`}>
+                                                    {tagName}
+                                                </Link>
+                                            </span>)
+                                        })} 
+                                        </h4>
+                                    </div>
+                                    <div className="o-headline">
                                         <h2>{frontmatter.title}</h2>
                                     </div>
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quia aliquam officia voluptatem, sed nostrum maxime nemo atque ad facilis repellendus commodi inventore possimus suscipit velit autem quam pariatur fugit?
@@ -45,6 +57,7 @@ export const query = graphql`
                     title
                     path
                     date
+                    tags
                 }
               }
             }
