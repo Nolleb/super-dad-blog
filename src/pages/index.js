@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import main from "../CSS/main.scss";
 
 const HomePage = ({data}) => {
+
     const {edges} = data.allMarkdownRemark;
     return (
         <Layout>

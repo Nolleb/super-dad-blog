@@ -1,8 +1,8 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 
-const SideBar = () => {
-    
+const SideBar = ({data}) => {
+   
     return(
         <section className="o-layout__item u-1/4@md">
             <ul>
@@ -17,7 +17,7 @@ const SideBar = () => {
                                 <h3>Super Dad hero</h3>
                             </div>
                         </div>
-                        <p className="c-blockquote">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia hic eius sequi ipsum sunt officiis laudantium incidunt, laborum magni nisi aliquid blanditiis perferendis molestiae aspernatur voluptates ducimus, rem nam dolores?</p>
+                        <p className="c-blockquote"></p>
                         <div className="paragraph">
                             <ul className="o-list">
                                 <li>This</li>
@@ -44,6 +44,25 @@ const SideBar = () => {
     )
 }
 
-
+// const SideBar = () => {
+//     return(
+//         <StaticQuery
+//             query={graphql`
+//                 query  {
+//                     allMarkdownRemark {
+//                         edges {
+//                         node {
+//                             frontmatter {
+//                                 tags
+//                             }
+//                         }
+//                         }
+//                     }
+//                 }
+//             `}
+//             render={data => <descriptionAndTags data={data} />}
+//         />
+//     )
+// }
 
 export default SideBar;

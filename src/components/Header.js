@@ -1,9 +1,9 @@
 import React from "react";
+import logo from "../../public/img/super-dad.png"
 import { StaticQuery } from "gatsby";
 import { graphql, Link } from "gatsby";
 
 const TitleAndDescription = ({data}) => {
-
     const title = data.site.siteMetadata.title;
 
     return(
@@ -25,7 +25,9 @@ const TitleAndDescription = ({data}) => {
                     <Link className="c-header__link" to="/">
                         <h1 className="heading-primary">{title}</h1>
                     </Link>
+                    
                 </div>
+                <img className="c-header__logo" src={logo} alt="logo" height="200"/>
             </div>
         </div>
     )
