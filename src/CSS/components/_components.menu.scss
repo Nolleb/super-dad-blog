@@ -1,0 +1,23 @@
+.c-menu {
+    list-style-type: none;
+
+    &__item {
+        line-height: 40px;
+    }
+
+    &__item--active {
+        background: $color-grey-dark;
+        color: $color-white;
+        border-radius: $global-radius;
+    }
+
+    &__item-link {
+        padding: 5px;
+    }
+
+    &__item-link:hover,
+    &__item-link:active
+    {
+        text-decoration: none;
+    }
+}

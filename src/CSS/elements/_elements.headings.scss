@@ -48,4 +48,8 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-align: center;
+    &:hover,
+    &:active{
+      text-decoration: none;
+    }
  }

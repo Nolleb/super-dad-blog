@@ -1,8 +1,11 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
+import { StaticQuery } from "gatsby";
 
-const SideBar = ({data}) => {
-   
+
+const DescriptionAndTags = ({data}) => {
+   const {edges} = data.allMarkdownRemark;
+
     return(
         <section className="o-layout__item u-1/4@md">
             <ul>
@@ -14,25 +17,38 @@ const SideBar = ({data}) => {
                                 <img className="c-avatar__img" src="https://placeimg.com/50/50/any" alt="Portrait" width="50" height="50"/>
                             </span>
                             <div className="o-media__body">
-                                <h3>Super Dad hero</h3>
+                                <h3>Super Dad</h3>
                             </div>
                         </div>
-                        <p className="c-blockquote"></p>
+                        <p className="c-blockquote">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sint fugit alias similique voluptatem sunt accusamus itaque quaerat assumenda quia culpa repellat placeat magnam labore commodi, omnis dolorem perspiciatis recusandae.
+                        </p>
+
+                        {edges.map(edge=>{
+                                const {frontmatter} = edge.node;
+                                 
+                                return(
+                                    <p className="test" key={frontmatter.tags}>
+                                    {frontmatter.tags.map((tagName, index)=>{
+                                            return(
+                                                <span className="c-panel__tag" key={index}>
+                                                    <Link to={`tags/${tagName}`}>
+                                                        {tagName}
+                                                    </Link>
+                                                </span>
+                                            )
+                                        })}
+                                    </p>
+                                )
+                                
+                            })}
+                        
                         <div className="paragraph">
-                            <ul className="o-list">
-                                <li>This</li>
-                                <li>That</li>
-                                <li>Thus</li>
-                                <li>Toto</li>
-                                <li>Tata</li>
-                                <li>Titi</li>
-                            </ul>
-                        </div>
-                        <div className="paragraph">
-                            <ul>
-                                <li>About</li>
-                                <li>Contact</li>
-                                <li><Link to='/tags'>Browse by tags</Link></li>
+                            <ul className="c-menu">
+                                <li className="c-menu__item"><Link to='/' className="c-menu__item-link" activeClassName="c-menu__item--active">Articles</Link></li>
+                                <li className="c-menu__item"><Link to='/about' className="c-menu__item-link" activeClassName="c-menu__item--active">About</Link></li>
+                                <li className="c-menu__item"><Link to='/contact' className="c-menu__item-link" activeClassName="c-menu__item--active">Contact</Link></li>
+                                <li className="c-menu__item"><Link to='/tags' className="c-menu__item-link" activeClassName="c-menu__item--active">Browse by tags</Link></li>
                             </ul>
                         </div>
                       
@@ -44,25 +60,25 @@ const SideBar = ({data}) => {
     )
 }
 
-// const SideBar = () => {
-//     return(
-//         <StaticQuery
-//             query={graphql`
-//                 query  {
-//                     allMarkdownRemark {
-//                         edges {
-//                         node {
-//                             frontmatter {
-//                                 tags
-//                             }
-//                         }
-//                         }
-//                     }
-//                 }
-//             `}
-//             render={data => <descriptionAndTags data={data} />}
-//         />
-//     )
-// }
+const SideBar = () => {
+    return(
+        <StaticQuery
+            query={graphql`
+                query  {
+                    allMarkdownRemark {
+                        edges {
+                        node {
+                            frontmatter {
+                                tags
+                            }
+                        }
+                        }
+                    }
+                }
+            `}
+            render={data => <DescriptionAndTags data={data} />}
+        />
+    )
+}
 
 export default SideBar;

@@ -29,7 +29,9 @@
         z-index: 2;
     }
 
-    &__link:hover {
+    &__link:hover,
+    &__link:active
+    {
         text-decoration: none;
     }
 
