@@ -15,7 +15,9 @@ const createTagPages = (createPage, posts) => {
             })
         }
     })
+    
     const tags = Object.keys(postsByTag);
+    
     createPage({
         path: '/tags',
         component: allTagsTemplate,
@@ -80,6 +82,7 @@ exports.createPages = (({graphql, actions}) =>{
                     })
                     resolve()
                 })
+
             })
         )
     })

@@ -5,7 +5,6 @@ import { StaticQuery } from "gatsby";
 
 const DescriptionAndTags = ({data}) => {
    const {edges} = data.allMarkdownRemark;
-
     return(
         <section className="o-layout__item u-1/4@md">
             <ul>
@@ -22,16 +21,18 @@ const DescriptionAndTags = ({data}) => {
                         </div>
                         <p className="c-blockquote">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim sint fugit alias similique voluptatem sunt accusamus itaque quaerat assumenda quia culpa repellat placeat magnam labore commodi, omnis dolorem perspiciatis recusandae.
-                        </p>
-
+                       </p>
+                       
+                       <div>
+                        <h4>Main categories</h4>
                         {edges.map(edge=>{
                                 const {frontmatter} = edge.node;
-                                 
+                                
                                 return(
                                     <p className="test" key={frontmatter.tags}>
                                     {frontmatter.tags.map((tagName, index)=>{
                                             return(
-                                                <span className="c-panel__tag" key={index}>
+                                                <span className="" key={index}>
                                                     <Link to={`tags/${tagName}`}>
                                                         {tagName}
                                                     </Link>
@@ -42,7 +43,9 @@ const DescriptionAndTags = ({data}) => {
                                 )
                                 
                             })}
-                        
+                            </div>
+                       
+                       
                         <div className="paragraph">
                             <ul className="c-menu">
                                 <li className="c-menu__item"><Link to='/' className="c-menu__item-link" activeClassName="c-menu__item--active">Articles</Link></li>
